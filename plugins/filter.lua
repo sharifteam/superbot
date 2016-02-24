@@ -40,7 +40,7 @@ local function get_filter(msg, var_name)
 		if value == 'msg' then
 			return 'کلمه ی کاربردی شما ممنوع است، در صورت تکرار با شما برخورد خواهد شد'
 		elseif value == 'kick' then
-			send_large_msg('chat#id'..msg.to.id, "به دلیل عدم رعایت قوانین گفتاری از ادامه ی گفتوگو محروم میشوید")
+			send_large_msg('chat#id'..msg.to.id, "به دلیل عدم رعایت قوانین گفتاری از ادامه ی گفتگو محروم میشوید")
 			chat_del_user('chat#id'..msg.to.id, 'user#id'..msg.from.id, ok_cb, true)
 		end
 	end
