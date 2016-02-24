@@ -1,6 +1,6 @@
 local function run(msg, matches)
   if not is_sudo(msg) then -- For Sudoers only !
-    return 'فقط سودوم @RM13790115'
+    return 'این دستور مخصوص مدیریت است'
   end
 	if matches[1] == 'sms' and is_sudo(msg) then
 		local response = matches[3]
