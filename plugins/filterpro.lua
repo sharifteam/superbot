@@ -31,19 +31,16 @@ local function run(msg, matches)
     -- get the sender id and set the variable user to it
     local user = "user#id"..msg.from.id
 
-    -- check if the data 'LockFuck' from the table 'settings' is "yes"
-    if ( data[tostring(msg.to.id)]['settings']['LockFuck'] == "yes" ) then
         -- send a message 
-        send_large_msg(chat, "عدم رعایت قوانین گفتاری")
+        send_large_msg(chat, "به دلیل عدم رعایت قوانین گفتاری از ادامه ی گفتگو محروم میشوید")
         
         -- kick the user who sent the message
         if ( Kick == true ) then
             chat_del_user(chat, user, ok_cb, true)
         elseif ( Warn   == true ) then
-            send_large_msg( get_receiver(msg), "عدم رعایت قوانین گفتاری @" .. msg.from.username )
+            send_large_msg( get_receiver(msg), "اخطار! عدم رعایت قوانین گفتاری @" .. msg.from.username )
         end
 
-    end
 
 end
  
