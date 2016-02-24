@@ -58,7 +58,7 @@ local function description_rules(msg, nama)
          rules = data[tostring(msg.to.id)]["rules"]
          rules = "\nRules :\n"..rules.."\n"
       end
-      local sambutan = "Hi "..nama.."\nWelcome to '"..string.gsub(msg.to.print_name, "_", " ").."'\nYou can use /help for see bot commands\n"
+      local sambutan = "سلام \n خوش آمدید. در این گروه می توانید تجربیات خود را به اشتراک، و سوالات و مشکلات خود را در میان بگذارید \n"
       local text = sambutan..about..rules.."\n"
       local receiver = get_receiver(msg)
       send_large_msg(receiver, text, ok_cb, false)
@@ -69,7 +69,7 @@ local function run(msg, matches)
    if not msg.service then
       return "Are you trying to troll me?"
    end
-   —vardump(msg)
+   --vardump(msg)
    if matches[1] == "chat_add_user" then
       if not msg.action.user.username then
           nama = string.gsub(msg.action.user.print_name, "_", " ")
@@ -88,13 +88,13 @@ local function run(msg, matches)
       description_rules(msg, nama)
    elseif matches[1] == "chat_del_user" then
        local bye_name = msg.action.user.first_name
-       return 'Bye '..bye_name
+       return ''
    end
 end
 
 return {
    description = "Welcoming Message",
-   usage = "send message to new member",
+   usage = "Welcome: If Added User Or Delete User Bot Send A Welcome Or GoodBye Message.",
    patterns = {
       "^!!tgservice (chat_add_user)$",
       "^!!tgservice (chat_add_user_link)$",
