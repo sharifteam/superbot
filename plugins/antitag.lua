@@ -9,7 +9,7 @@ if not is_momod(msg) then
 
 
 chat_del_user('chat#id'..msg.to.id, 'user#id'..msg.from.id, ok_cb, true)
-    local msgtag = 'استفاده از # و @ در گروه ممنوع بود بای '
+    local msgtag = 'استفاده از # و @ در گروه ممنوع است '
    local receiver = msg.to.id
     send_large_msg('chat#id'..receiver, msgads.."\n", ok_cb, false)
 
