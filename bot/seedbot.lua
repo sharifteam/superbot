@@ -210,7 +210,6 @@ function create_config( )
     enabled_plugins = {
     "onservice",
     "lockchat",
-    "info",
     "pluginns",
     "inrealm",
     "ingroup",
@@ -232,9 +231,7 @@ function create_config( )
     "linkpv",
     "all",
     "block",
-    "spam",
     "location",
-    "left",
     "support",
     "filter",
     "filterpro",
